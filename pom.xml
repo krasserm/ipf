@@ -47,7 +47,7 @@
         <eclipse-plugin-version>2.8</eclipse-plugin-version>
         
         <!-- Dependency version properties -->
-        <activemq-version>5.4.1</activemq-version>
+        <activemq-version>5.3.2</activemq-version>
         <aspectj-version>1.6.2</aspectj-version>
         <camel-version>2.5.0</camel-version>
         <commons-codec-version>1.4</commons-codec-version>
