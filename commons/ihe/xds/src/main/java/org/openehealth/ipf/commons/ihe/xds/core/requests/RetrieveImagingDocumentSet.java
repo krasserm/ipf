@@ -1,12 +1,12 @@
 /*
- * Copyright 2012 the original author or authors.
- *
+ * Copyright 2009 the original author or authors.
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
- *
+ *     
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -15,13 +15,13 @@
  */
 package org.openehealth.ipf.commons.ihe.xds.core.requests;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
-
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * Request object for the Retrieve Imaging Document Set transaction.
@@ -30,13 +30,13 @@ import java.util.List;
  * @author Clay Sebourn
  */
 
-@XmlRootElement(name = "retrieveImagingDocumentSet")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RetrieveImagingDocumentSet", propOrder = {"retrieveStudies"})
+@XmlRootElement(name = "retrieveImagingDocumentSet")
 public class RetrieveImagingDocumentSet implements Serializable {
-    private static final long serialVersionUID = -8999352499981099419L;
-
-    @XmlElement(name = "RetrieveStudies", required = true)
+    private static final long serialVersionUID = -3410625944194160618L;
+    
+    @XmlElementRef
     private final List<RetrieveStudy> retrieveStudies = new ArrayList<RetrieveStudy>();
 
     /**
@@ -63,6 +63,7 @@ public class RetrieveImagingDocumentSet implements Serializable {
         if (getClass() != obj.getClass())
             return false;
         RetrieveImagingDocumentSet other = (RetrieveImagingDocumentSet) obj;
+
         if (retrieveStudies == null) {
             if (other.retrieveStudies != null)
                 return false;
